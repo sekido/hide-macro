@@ -8,6 +8,7 @@
 	#ex = selendx;
 	#ey = selendy;
 	#line = #by;
+	left;
 	begingroupundo;
 	while ( #line < #ey ) {
 		moveto 0, #line;
