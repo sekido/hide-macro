@@ -1,0 +1,22 @@
+	setcompatiblemode 15;
+	if ( ! selecting ) endmacro;
+	$marker = input("ˆÍ‚Ş‹L†‚ğ“ü—Í‚µ‚Ä‚­‚¾‚³‚¢", "'");
+	if ( $marker == "" ) endmacro;
+	$tmarker = input("s––‹L†‚ğ“ü—Í‚µ‚Ä‚­‚¾‚³‚¢", ",");
+	#bx = seltopx;
+	#by = seltopy;
+	#ex = selendx;
+	#ey = selendy;
+	#line = #by;
+	begingroupundo;
+	while ( #line < #ey ) {
+		moveto 0, #line;
+		insert $marker;
+		down;
+		left;
+		left;
+		insert $marker;
+		insert $tmarker;
+		#line = #line + 1;
+	}
+	endgroupundo 1;

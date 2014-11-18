@@ -1,0 +1,5 @@
+	setcompatiblemode 15;
+	begingroupundo;
+	replaceall "[ \\t]+$" , "" , regular, nocasesense, inselect, nohilight, loop;
+	if( ! result )  beep;
+	endgroupundo 1;
