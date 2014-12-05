@@ -1,0 +1,20 @@
+	setcompatiblemode 15;
+	if ( ! selecting ) endmacro;
+	$st = input("Å‰‚Ì”Ô†‚ğ“ü—Í‚µ‚Ä‚­‚¾‚³‚¢", "1");
+	#start = val($st);
+	if ( #start <= 0 ) endmacro;
+	#bx = seltopx;
+	#by = seltopy;
+	#ex = selendx;
+	#ey = selendy;
+	#line = #by;
+	left;
+	begingroupundo;
+	while ( #line < #ey ) {
+		moveto 0, #line;
+		$ln = rightstr("00000" + str(#start + #line - #by), 5);
+		insert $ln;
+		insert ": ";
+		#line = #line + 1;
+	}
+	endgroupundo 1;
